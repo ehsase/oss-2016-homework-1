@@ -7,6 +7,11 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
     continue 
   fi
   git clone $line
+  access=$(echo $?)
+  if [ "$access" != "0" ]; then
+    echo "QQQQQQQQQQQQQQQQ access error"
+    continue
+  fi  
   cd oss-2016-homework
   git log -2
   git branch
