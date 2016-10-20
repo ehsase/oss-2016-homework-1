@@ -6,6 +6,11 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
   echo $url
   echo $score
   git clone $url
+  access=$(echo $?)
+  if [ "$access" != "0" ]; then
+    echo "QQQQQQQQQQQQQQQQ access error"
+    continue
+  fi
   cd oss-2016-homework
   targetrepo="homework-2"
   git checkout $targetrepo
