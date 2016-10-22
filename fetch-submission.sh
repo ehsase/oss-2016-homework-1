@@ -11,17 +11,16 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
   if [ "$access" != "0" ]; then
     echo "QQQQQQQQQQQQQQQQ access error"
     continue
-  fi  
+  fi
   cd oss-2016-homework
-  git log -2
-  git branch
-  echo "XXXXXXX - should print ID"
-  cat *
-  git checkout homework-2
-  git log -2
-  echo "YYYYYYY - should have oss-homework file"
+  echo "XXXXXXX - should show homework-3 branch"
+  git branch -a
+  git checkout homework-3
+  echo "YYYYYYY - should have review-url file"
   ls -l
+  cat review-url
   cd ../
   rm -rf oss-2016-homework
   echo -e "ZZZZZZZZZZZZ\nEnd of a student\n\n\n"
+  break
 done < "$1"
