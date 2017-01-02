@@ -1,4 +1,5 @@
 new conflict message from merge-test-1 in the first line
+new message from merge-test-2 in the first line
 
 New message from merge-test-2 in the first line
 git merge test
